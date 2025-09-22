@@ -1,0 +1,230 @@
+<!--
+  index.html
+  A single-file responsive portfolio/site ready for GitHub Pages.
+  How to deploy:
+    1. Create a new GitHub repository (public) named <your-username>.github.io OR any repo.
+    2. Add this file as `index.html` at the repo root and push.
+    3. For user site: visit https://<your-username>.github.io
+       For project site: enable Pages in repository Settings -> Pages -> choose branch (main) and root.
+-->
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>صفحه شخصی — GitHub Pages</title>
+  <meta name="description" content="صفحه شخصی ساخته‌شده با HTML/CSS/JS — آماده برای GitHub Pages" />
+
+  <!-- Google font (optional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#38bdf8; /* sky-400 */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Vazirmatn', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg), #071022);
+      color:#e6eef8;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+
+    /* container */
+    .wrap{max-width:1100px;margin:0 auto}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#022;box-shadow:0 6px 18px rgba(3,7,18,0.6)
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-inline:8px}
+    nav a:hover{color:var(--accent)}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;margin-bottom:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:22px;box-shadow:0 6px 24px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
+    h1{margin:0 0 8px 0;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center}
+    .avatar{width:160px;height:160px;border-radius:18px;background:linear-gradient(135deg,#334155,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:#fff}
+    .socials{display:flex;gap:8px}
+    .pill{padding:8px 12px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.02)}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:8px}
+    .proj{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .proj h3{margin:0 0 6px 0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .avatar{width:120px;height:120px}
+    }
+
+    /* small utilities */
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#022;font-weight:700;text-decoration:none}
+
+    .chip{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;background:rgba(0,0,0,0.16);font-weight:600}
+
+    /* simple grid for contact */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.two-col{grid-template-columns:1fr}}
+
+    /* small code block look */
+    pre.code{background:#041025;padding:12px;border-radius:10px;color:#9bd0ff;overflow:auto}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">OM</div>
+        <div>
+          <div style="font-weight:700">نام شما</div>
+          <div style="font-size:13px;color:var(--muted)">توسعه‌دهنده • طراح • محقق</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">درباره</a>
+        <a href="#projects">پروژه‌ها</a>
+        <a href="#contact">تماس</a>
+        <a href="#">رزومه</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>سلام — من نام شما هستم</h1>
+        <p class="lead">اینجا یک صفحهٔ نمونه است که با HTML/CSS/JS ساده ساخته شده و آماده میزبانی روی GitHub Pages است. می‌توانید این فایل را ویرایش کنید تا اطلاعات و پروژه‌های خود را نشان دهید.</p>
+
+        <div style="margin-top:18px" class="two-col">
+          <div>
+            <div class="chip">🧭 تمرکز: وب، یادگیری ماشینی</div>
+            <div style="height:8px"></div>
+            <a class="btn" href="#projects">نمایش پروژه‌ها</a>
+          </div>
+
+          <div style="text-align:left">
+            <div style="color:var(--muted);font-size:13px">در دسترس برای:</div>
+            <div style="margin-top:6px" class="socials">
+              <a class="pill" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+              <a class="pill" href="https://linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <hr style="margin:18px 0;border-color:rgba(255,255,255,0.02)">
+
+        <h3>نمونه کد برای دیپلوی سریع</h3>
+        <pre class="code"># پوشهٔ پروژه
+# git init
+# git add index.html
+# git commit -m "init"
+# git remote add origin https://github.com/your-username/your-repo.git
+# git push -u origin main
+</pre>
+
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">شما</div>
+        <div style="text-align:center">
+          <div style="font-weight:700">نام شما</div>
+          <div style="color:var(--muted);font-size:13px">توسعه‌دهندهٔ فول‌استک</div>
+        </div>
+
+        <div style="width:100%;display:flex;gap:10px;justify-content:center;margin-top:6px">
+          <a class="pill" href="mailto:you@example.com">you@example.com</a>
+          <a class="pill" href="#contact">تماس</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="card" style="margin-bottom:18px">
+      <h2>دربارهٔ من</h2>
+      <p style="color:var(--muted)">چند جمله کوتاه در مورد شما: پیشینهٔ تحصیلی، علایق، مهارت‌های کلیدی. این بخش را با متن و لینک به نمونه‌کارها پر کنید.</p>
+    </section>
+
+    <section id="projects">
+      <h2 style="margin-bottom:10px">پروژه‌ها</h2>
+      <div class="projects">
+        <article class="proj">
+          <h3>پروژهٔ نمونه ۱</h3>
+          <p style="color:var(--muted);margin:6px 0">توضیح کوتاه دربارهٔ پروژه. تکنولوژی‌ها: HTML, CSS, JavaScript</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+        </article>
+
+        <article class="proj">
+          <h3>پروژهٔ نمونه ۲</h3>
+          <p style="color:var(--muted);margin:6px 0">توضیح کوتاه دربارهٔ پروژه. لینک و دمو</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span></div>
+        </article>
+
+        <article class="proj">
+          <h3>پروژهٔ نمونه ۳</h3>
+          <p style="color:var(--muted);margin:6px 0">یک پروژهٔ پژوهشی یا کتابخانه</p>
+          <div class="tags"><span class="tag">Research</span><span class="tag">Math</span></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:18px">
+      <h2>تماس</h2>
+      <p style="color:var(--muted)">اگر می‌خواهید همکاری کنید یا سوالی دارید، یک پیام ارسال کنید.</p>
+
+      <form onsubmit="event.preventDefault(); sendMessage()" style="margin-top:12px">
+        <div class="two-col">
+          <input id="name" placeholder="نام" required style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+          <input id="email" placeholder="ایمیل" type="email" required style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+        </div>
+        <textarea id="message" placeholder="پیام شما" required style="width:100%;margin-top:8px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;min-height:120px"></textarea>
+        <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn" type="submit">ارسال</button>
+        </div>
+      </form>
+
+      <script>
+        function sendMessage(){
+          const n = document.getElementById('name').value.trim();
+          const e = document.getElementById('email').value.trim();
+          const m = document.getElementById('message').value.trim();
+          if(!n||!e||!m){alert('همهٔ فیلدها را پر کنید.');return}
+          // simple default: open mail client (you can replace with server endpoint)
+          const subject = encodeURIComponent('تماس از سایت — ' + n);
+          const body = encodeURIComponent(m + '\n\n---\\n' + n + ' — ' + e);
+          window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+        }
+      </script>
+    </section>
+
+    <footer>
+      © <span id="year"></span> نام شما — ساخته‌شده با ❤️ و GitHub Pages
+    </footer>
+
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
