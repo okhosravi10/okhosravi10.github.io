@@ -62,7 +62,7 @@
     p.lead{margin:0;color:var(--muted)}
 
     .profile{display:flex;flex-direction:column;gap:14px;align-items:center}
-    .avatar{width:160px;height:160px;border-radius:18px;background:linear-gradient(135deg,#334155,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:#fff}
+    .avatar{width:160px;height:160px;border-radius:18px;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .socials{display:flex;gap:8px}
     .pill{padding:8px 12px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.02)}
 
@@ -115,7 +115,7 @@
 
     <section class="hero">
       <div class="card">
-        <h1>سلام — من نام شما هستم</h1>
+        <h1>امید خسروی</h1>
         <p class="lead">اینجا یک صفحهٔ نمونه است که با HTML/CSS/JS ساده ساخته شده و آماده میزبانی روی GitHub Pages است. می‌توانید این فایل را ویرایش کنید تا اطلاعات و پروژه‌های خود را نشان دهید.</p>
 
         <div style="margin-top:18px" class="two-col">
@@ -148,7 +148,12 @@
       </div>
 
       <aside class="card profile">
-        <div class="avatar">شما</div>
+        <div class="avatar">
+          <img src="https://raw.githubusercontent.com/okhosravi10/okhosravi10.github.io/main/omid_photo.jpg" 
+               alt="عکس من"
+               style="width:100%; height:100%; object-fit:cover; object-position: top; border-radius:18px;">
+        </div>
+        </div>
         <div style="text-align:center">
           <div style="font-weight:700">نام شما</div>
           <div style="color:var(--muted);font-size:13px">توسعه‌دهندهٔ فول‌استک</div>
